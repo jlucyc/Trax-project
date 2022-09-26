@@ -6,8 +6,8 @@ import repositories.product_repository as product_repository
 import repositories.manufacturer_repository as manufacturer_repository
 
 
-# product_repository.delete_all()
-# manufacturer_repository.delete_all()
+product_repository.delete_all()
+manufacturer_repository.delete_all()
 
 manufacturer_1 = Manufacturer("Body Skill", "id")
 manufacturer_repository.save(manufacturer_1)

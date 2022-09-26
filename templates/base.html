@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Trax</title>
         <link href="https://fonts.googleapis.com/css?family=Merriweather|Special+Elite" rel="stylesheet">
 
-    </head>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/buttons.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tables.css') }}">
+    <header></header>
+</head>
+<body>
+    
+        <nav>
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/manufacturers">Manufacturers</a></li>
+                <li><a href="/products">Products</a></li>
+            </ul>
+        </nav>
+
+
+
+</body>
+
         {% block content %}
 
         {% endblock %}

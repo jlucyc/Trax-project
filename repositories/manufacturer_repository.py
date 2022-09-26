@@ -18,4 +18,8 @@ def select_all():
 
     sql = "SELECT * FROM manufacturers"
     results = run_sql(sql)
+    for row in results:
+        manufacturer = Manufacturer(row['name'], row['id'])
+        manufacturers.append(manufacturer)
+    return manufacturers
     
