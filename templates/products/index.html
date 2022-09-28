@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Products</h1>
+
+<p class="btn--wrapper">
+    <a class="btn btn--action" href="/products/new">New Product</a>
+    </p>
+
+    <ul>
+        {% for product in products %}
+        <li>
+            <p>Name: {{ product.name }} Description: {{ product.description }} Quantity:{{ product.stock_quantity}} Buying Cost: £{{ product.buying_cost }} Selling Price: £{{ product.selling_price }} Manufacturer: {{ product.manufacturer.name}}</p>
+            {% if product.stock_quantity == 0 %}
+                out of stock
+            {% elif product.stock_quantity <= 2 and product.stock_quantity > 0 %}
+                Low Stock
+            {% endif %}
+
+            
+            
+            <a href="products/{{product.id}}/edit">Edit</a>
+        </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

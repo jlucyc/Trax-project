@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> Add New Product </h1>
+
+<form action="/products" method="post">
+  <label for="name"> Product</label>
+  <input type="text" name="product_name" id="product_name" required autofocus>
+  <label for="description">Description</label>
+  <input type="text" name="description" id="description">
+
+ <label for="stock_quantity">Quantity</label>
+ <input type="text" name="stock_quantity" id="stock_quantity">
+  <label for="buying_cost">Cost</label>
+  <input type="text" name="buying_cost" id="buying_cost">
+  <label for="selling_price">Sell Price</label>
+  <input type="text" name="selling_price" id="selling_price">
+
+  <select name="manufacturer_id" id="manufacturer">
+        {% for manufacturer in manufacturers %}
+        <option value="{{ manufacturer.id }}">{{ manufacturer.name }}</option>
+        {% endfor %}
+    </select>
+    <input class="btn btn--action" type='submit' value="Add">
+    
+
+</form>
+
+
+{% endblock %}

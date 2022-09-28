@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Manufacturers</h1>
+
+<p class="btn--wrapper">
+    <a class="btn btn--action" href="/manufacturers/new">New Manufacturer</a>
+</p>
+
+<ul>
+    {% for manufacturer in manufacturers %}
+    <li>
+        <p>Name: {{ manufacturer.name }}</p>
+    </li>
+    <p class="btn--wrapper">
+        <a class="btn btn--action" href="/manufacturers/{{manufacturer.id}}/edit">edit manufacturer</a>
+    </p>
+    <!-- <p class="btn--wrapper">
+        <a class="btn btn--action" href="/manufacturers/{{manufacturer.id}}/delete">delete Manufacturer</a>
+    </p> -->
+    <form action="/manufacturers/{{manufacturer.id}}/delete" method="POST">
+        <button type="submit">Delete</button>
+        <!-- <button type="submit" formaction="/action_page2.php">Submit to another page</button> -->
+      </form>
+
+    {% endfor %}
+</ul>
+
+{% endblock %}

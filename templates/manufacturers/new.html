@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> Add New Manufacturer </h1>
+
+<form action="/manufacturers" method="post">
+ <label for="name">New Manufacturer</label>
+ <input type="text" name="manufacturer_name" id="manufacturer_name" required autofocus>
+ 
+ <input class="btn btn--action" type='submit' value="Add">
+
+ </form>
+
+ {% endblock %}
