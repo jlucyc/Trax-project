@@ -21,19 +21,19 @@ product_1 = Product("Treadmill", "Indoor running machine", 7, 500, 800, manufact
 product_repository.save(product_1)
 
 
-product_2 = Product("Air Bike", "conditioning bike", 1, 750, 1000, manufacturer_2)
+product_2 = Product("Air Bike", "Hell bike", 1, 750, 1000, manufacturer_2)
 product_repository.save(product_2)
 
-product_3 = Product("Rowing Machine", "Indoor rower", 3, 400, 650, manufacturer_2)
+product_3 = Product("Rowing Machine", "On a boat but inside", 3, 400, 650, manufacturer_2)
 product_repository.save(product_3)
 
-product_4 = Product("Power Bag", "20kg Weighted Bag", 15, 20, 40, manufacturer_1)
+product_4 = Product("Power Bag", "Big bag full of sand", 15, 20, 40, manufacturer_1)
 product_repository.save(product_4)
 
 product_5 = Product("Battle Rope", "Big heavy rope", 0, 40, 75, manufacturer_1)
 product_repository.save(product_5)
 
-product_6 = Product("Resistance Band", "Band used for strength training", 20, 10, 20, manufacturer_1)
+product_6 = Product("Resistance Band", "Big elastic band", 20, 10, 20, manufacturer_1)
 product_repository.save(product_6)
 
 
