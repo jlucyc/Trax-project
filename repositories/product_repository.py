@@ -6,8 +6,8 @@ import pdb
 
 def save(product):
     # pdb.set_trace()
-    sql = "INSERT INTO products (name, description, stock_quantity, buying_cost, selling_price, margin, manufacturer_id) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING *"
-    values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_price, product.margin, product.manufacturer.id]
+    sql = "INSERT INTO products (name, description, stock_quantity, buying_cost, selling_price, manufacturer_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
+    values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_price, product.manufacturer.id]
     
     results = run_sql(sql, values)
     
@@ -27,7 +27,7 @@ def select_all():
 
         manufacturer = manufacturer_repository.select(row['manufacturer_id'])
         
-        product = Product(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_price'], row['margin'], manufacturer, row['id'])
+        product = Product(row['name'], row['description'], row['stock_quantity'], row['buying_cost'], row['selling_price'], manufacturer, row['id'])
         products.append(product)
     return products
 
@@ -45,14 +45,14 @@ def select(id):
 
     manufacturer = manufacturer_repository.select(result['manufacturer_id'])
 
-    product = Product(result['name'], result['description'], result['stock_quantity'], result['buying_cost'], result['selling_price'], result['margin'], manufacturer, result['id'])
+    product = Product(result['name'], result['description'], result['stock_quantity'], result['buying_cost'], result['selling_price'], manufacturer, result['id'])
     return product
 
 
 
 def update(product):
-    sql = "UPDATE products SET (name, description, stock_quantity, buying_cost, selling_price, margin) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_price, product.margin, product.id]
+    sql = "UPDATE products SET (name, description, stock_quantity, buying_cost, selling_price) = (%s, %s, %s, %s, %s) WHERE id = %s"
+    values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_price, product.id]
     run_sql(sql, values)
 
 
