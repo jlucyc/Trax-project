@@ -30,11 +30,12 @@ def create_product():
     stock_quantity = request.form['stock_quantity']
     buying_cost = request.form['buying_cost']
     selling_price = request.form['selling_price']
+    margin = request.form['margin']
     manufacturer_id = request.form['manufacturer_id']
 
     manufacturer = manufacturer_repository.select(manufacturer_id)
 
-    product = Product(name, description, stock_quantity, buying_cost, selling_price, manufacturer)
+    product = Product(name, description, stock_quantity, buying_cost, selling_price, margin,  manufacturer)
 
     product_repository.save(product)
     return redirect('/products')
@@ -64,10 +65,11 @@ def update_product(id):
     stock_quantity = request.form['stock_quantity']
     buying_cost = request.form['buying_cost']
     selling_price = request.form['selling_price']
+    margin = request.form['margin']
     manufacturer_id = request.form['manufacturer_id']
 
     manufacturer = manufacturer_repository.select(manufacturer_id)
-    product = Product(name, description, stock_quantity, buying_cost, selling_price, manufacturer, id)
+    product = Product(name, description, stock_quantity, buying_cost, selling_price, margin, manufacturer, id)
 
     product_repository.update(product)
     return redirect('/products')

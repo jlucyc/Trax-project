@@ -4,17 +4,17 @@
 <h1> Add New Product </h1>
 
 <form action="/products" method="post">
-  <label for="name"> Product</label>
-  <input type="text" name="product_name" id="product_name" required autofocus>
-  <label for="description">Description</label>
-  <input type="text" name="description" id="description">
+  <label for="name"></label>
+  <input type="text" name="product_name" placeholder="product" id="product_name" required autofocus>
+  <label for="description"></label>
+  <input type="text" name="description" placeholder="Description" id="description">
 
- <label for="stock_quantity">Quantity</label>
- <input type="text" name="stock_quantity" id="stock_quantity">
-  <label for="buying_cost">Cost</label>
-  <input type="text" name="buying_cost" id="buying_cost">
-  <label for="selling_price">Sell Price</label>
-  <input type="text" name="selling_price" id="selling_price">
+ <label for="stock_quantity"></label>
+ <input type="text" name="stock_quantity" placeholder="Quantity"  id="stock_quantity">
+  <label for="buying_cost"></label>
+  <input type="text" name="buying_cost" placeholder="Wholesale Cost"  id="buying_cost">
+  <label for="selling_price"></label>
+  <input type="text" name="selling_price" placeholder="Sell Price" id="selling_price">
 
   <select name="manufacturer_id" id="manufacturer">
         {% for manufacturer in manufacturers %}

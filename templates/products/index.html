@@ -9,6 +9,8 @@
 
     <ul>
         {% for product in products %}
+        <div class="products">
+            <div class="content">
         <li>
             <p>Name: {{ product.name }} Description: {{ product.description }} Quantity:{{ product.stock_quantity}} Buying Cost: £{{ product.buying_cost }} Selling Price: £{{ product.selling_price }} Manufacturer: {{ product.manufacturer.name}}</p>
             {% if product.stock_quantity == 0 %}
@@ -23,5 +25,7 @@
         </li>
         {% endfor %}
     </ul>
+</div>
+</div>
 
 {% endblock %}
