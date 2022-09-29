@@ -1,0 +1,6 @@
+find trax_project on terminal
+code . into it
+open new terminal on vs code
+type the commands dropdb trax_project, createdb trax_project, psql -d trax_project -f db/trax_project.sql then flask run
+open up another terminal and enter python3 console.py
+go to http://localhost:4999/ to get to the homepage
