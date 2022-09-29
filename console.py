@@ -15,13 +15,9 @@ manufacturer_repository.save(manufacturer_1)
 manufacturer_2 = Manufacturer("Live Fitness", "id")
 manufacturer_repository.save(manufacturer_2)
 
-# def margin(selling_price, buying_cost):
-#     return (selling_price - buying_cost)
 
 
-
-
-product_1 = Product("Treadmill", "Indoor running machine", 7, 500, 80, manufacturer_1)
+product_1 = Product("Treadmill", "Indoor running machine", 7, 500, 800, manufacturer_1)
 product_repository.save(product_1)
 
 

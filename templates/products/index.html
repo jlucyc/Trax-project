@@ -13,6 +13,8 @@
             <div class="content">
         <li>
             <p>Name: {{ product.name }} Description: {{ product.description }} Quantity:{{ product.stock_quantity}} Buying Cost: £{{ product.buying_cost }} Selling Price: £{{ product.selling_price }} Manufacturer: {{ product.manufacturer.name}}</p>
+            Profit: £ {{ product.selling_price - product.buying_cost }}
+            
             {% if product.stock_quantity == 0 %}
                 out of stock
             {% elif product.stock_quantity <= 2 and product.stock_quantity > 0 %}
