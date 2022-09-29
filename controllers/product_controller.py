@@ -17,7 +17,7 @@ def products():
 @products_blueprint.route("/products/new")
 def new_product():
     manufacturers = manufacturer_repository.select_all()
-    # pdb.set_trace()
+    
     return render_template("products/new.html", all_products = products, manufacturers = manufacturers)
 
 

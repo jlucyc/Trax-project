@@ -5,7 +5,7 @@ import repositories.manufacturer_repository as manufacturer_repository
 import pdb
 
 def save(product):
-    # pdb.set_trace()
+   
     sql = "INSERT INTO products (name, description, stock_quantity, buying_cost, selling_price, manufacturer_id) VALUES (%s, %s, %s, %s, %s, %s) RETURNING *"
     values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_price, product.manufacturer.id]
     
@@ -54,7 +54,7 @@ def update(product):
     values = [product.name, product.description, product.stock_quantity, product.buying_cost, product.selling_price, product.id]
     run_sql(sql, values)
 
-# def margin()
+
 
 
 
